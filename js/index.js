@@ -3,7 +3,7 @@ const select = document.querySelector("select")
 const memeContainer = document.querySelector(".memeContainer")
 
 
-const url = "https://api.pokemontcg.io/v2/cards?q=name:gardevoir";
+const url = "https://api.pokemontcg.io/v2/cards";
 const proxy = "https://noroffcors.herokuapp.com/";
 
 

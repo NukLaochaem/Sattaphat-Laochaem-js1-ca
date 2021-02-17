@@ -4,7 +4,7 @@ const id = params.get("id");
 
 console.log(params);
 
-const pokeUrl = "https://api.pokemontcg.io/v2/cards?q=name:gardevoir" + id;
+const pokeUrl = "https://api.pokemontcg.io/v2/cards" +id;
 const proxy = "https://noroffcors.herokuapp.com/";
 
 const containerDetails = document.querySelector(".container_details")
