@@ -22,7 +22,7 @@ async function api(){
             }
             console.log(pokemon[i]);
 
-            memeContainer.innerHTML += `<a href="details.html?id=${pokemon[i].id}">  
+            memeContainer.innerHTML += `<a href="details.html?q=name:${pokemon[i].name}">  
                                         <img src="${pokemon[i].images.small}"></img>
                                         </a>`;
         }                               
