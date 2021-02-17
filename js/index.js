@@ -1,11 +1,6 @@
-
-const select = document.querySelector("select")
-const memeContainer = document.querySelector(".memeContainer")
-
-
 const url = "https://api.pokemontcg.io/v2/cards";
-const proxy = "https://noroffcors.herokuapp.com/";
 
+const cardContainer = document.querySelector(".cards_container")
 
 
 async function api(){
@@ -14,23 +9,21 @@ async function api(){
         const json = await response.json(response);
         const pokemon = json.data
 
-        console.log();
-
+        console.log(pokemon);
+        cardContainer.innerHTML = "";
         for(let i = 0; i < pokemon.length; i++){
-            if(i === 6){
+            if(i === 10){
                 break;
             }
             console.log(pokemon[i]);
 
-            memeContainer.innerHTML += `<a href="details.html?q=name:${pokemon[i].name}">  
-                                        <img src="${pokemon[i].images.small}"></img>
-                                        </a>`;
+            cardContainer.innerHTML += `
+                                        <a href="details.html?name=${pokemon[i].name}">
+                                        <img src="${pokemon[i].images.small}"></img></a>`;
         }                               
-
-        
     } catch (error) {
-        console.log(" pic didnt work");
-        memeContainer.innerHTML ="Error, Cannot load the page"
+        console.log("pokemon did not load");
+        cardContainer.innerHTML = `<h4 class="error">Error! Something went wrong! Error has occurred.  </h4>`
     }
 }
 api()
@@ -38,12 +31,10 @@ api()
 
 
 
+// Jokes
 
-
-
-
-
-const jokecontainer = document.querySelector(".jokes");
+const jokecontainer = document.querySelector(".joke_container");
+const button = document.querySelector(".btn")
 
 const jokesUrl = "https://official-joke-api.appspot.com/jokes/ten";
 
@@ -51,19 +42,26 @@ const jokesUrl = "https://official-joke-api.appspot.com/jokes/ten";
 async function jokeAPI(){
     try{
         const respon = await fetch(jokesUrl);
-        const getJson = await respon.json(respon);
+        const joke = await respon.json(respon);
 
-        //console.log(getJson);
-
-        for(let i = 0; i < getJson.length; i++){ 
+        jokecontainer.innerHTML="";
+        console.log(joke);
+        
+        for(let i = 0; i < joke.length; i++){ 
             
-        jokecontainer.innerHTML += `<div class="joke_container">
-                                        <div> ${getJson[i].setup} </div>
-                                        <div> Answer: ${getJson[i].punchline} </div>
+            if(i === 5){
+                break;
+            }
+
+        jokecontainer.innerHTML += ` <div class="jokes">
+                                        <div class="setup"> ${joke[i].setup} </div>
+                                        <div>Revel: ${joke[i].punchline} </div>
                                     </div>`;
+        
         }
     } catch (error){
-        console.log("not working fix me");
+        console.log("jokes not loading");
+        jokecontainer.innerHTML = `<h4 class="error">Error! Something went wrong! Error has occurred.  </h4>`
     }
 }
 jokeAPI();

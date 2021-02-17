@@ -1,41 +1,50 @@
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-const idName = params.get("name");
+const name = params.get("name");
+console.log(name);
 
-console.log(params);
 
-const pokeUrl = "https://api.pokemontcg.io/v2/cards";
-const proxy = "https://noroffcors.herokuapp.com/";
+const pokeUrl = "https://api.pokemontcg.io/v2/cards?";
+const singlePokemon = pokeUrl +`q=name:${name}`;
 
-const containerDetails = document.querySelector(".container_details")
+
+const cardsContainer = document.querySelector(".item_container")
 const details = document.querySelector(".details");
+const title = document.querySelector("title")
 
-containerDetails.innerHTML = idName;
 
 async function callApi(){
     try{
-        const response = await fetch(pokeUrl);
+        const response = await fetch(singlePokemon);
         const json = await response.json(response);
-        const results = json.data;
+        const cards = json.data;
         
-        console.log(results);
+        console.log(cards);
 
-        for(let i = 0; i < results.length; i++){
+        cardsContainer.innerHTML = "";
+
+        for(let i = 0; i < cards.length; i++){
             
             if(i === 5){
                 break;
             }
 
-            console.log(results[i]);
+            let cardFlavorText = "Unknown"
+            if(cards[i].flavorText){
+                cardFlavorText = cards[i].flavorText;
+            }
 
-            containerDetails.innerHTML += `<h3>Name: ${results[i].name}</h3>
-                                            <h3>Pokemon Type: ${results[i].types}</h3>
-                                            <img src="${results[i].images.small}"></img>
-            `;
+            console.log(cards[i]);
+
+            cardsContainer.innerHTML = `<h1>${cards[i].name}<h1>
+                                        <h3>Pokemon Type: ${cards[i].types}</h3>
+                                        <img src="${cards[i].images.small}" alt"Pokemon Card name:${cards[i].name}"></img>
+                                        <h4> ${cardFlavorText}</h4>`;
+            title.innerHTML = `${cards[i].name}`;
         }
     } catch (error) {
-        console.log("didnt work");
-        detail.innerHTML ="Error, Cannot load the page"
+        console.log(" cant not load pokemon");
+        cardsContainer.innerHTML = `<h4>Error! Something went wrong! Cannot load the page.</h4>`;
     }
 }
 

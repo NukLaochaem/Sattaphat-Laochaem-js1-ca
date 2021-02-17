@@ -1,60 +1,94 @@
+.loader {
+    display: inline-block;
+    transform: translateZ(1px);
+}
+    .loader {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    background: #fff;
+    animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+    0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    0% {
+    transform: rotateY(0deg);
+    }
+    50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    100% {
+    transform: rotateY(3600deg);
+    }
+}
+
 body{
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(228, 228, 228);
+}
+
+h1 {
+    text-align: center;
+    font-style:initial;
+    margin: 1rem;
 }
 
 h2 {
     text-align: center;
-    font-style:initial
+    font-style:initial;
+    margin: 1rem;
 }
-
-select{
-    font-size: 1rem;
-    margin: 2rem;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    background: white;
-    padding: 1rem;
-    height: 90vh;
-}
-
 
 a{
     color: black;
 }
 
+/*         Index             */
 
-.memeContainer{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.img_meme{
-    margin: 1rem;
-    width: 450px;
-    
-}
-.meme_names{
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.meme_cards{
-    margin: 1rem;
+.cards_container{
+    display: block;
+    text-align: center;
+    margin-bottom: 150px;
 }
 
 
 
 
 
-
-
-
-
-                                                    /* jokes css */
+/*            Jokes   */
 
 .joke_container{
-    margin: 5rem;
+    text-align: center;
+}
+
+.jokes{
+    margin: 3rem;
+}
+.setup{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.punch_line{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+/* Details  */
+
+
+
+.item_container{
+    display: block;
+    text-align: center;
 }
