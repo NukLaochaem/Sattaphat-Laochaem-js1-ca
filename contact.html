@@ -8,14 +8,33 @@
     <title>Contact form</title>
 </head>
 <body>
-    <form>
-        <label for="name"></label>
-        <label for="email"></label>
-        <label for="address"></label>
-        <button>Sumbit</button>
-    </form>
+    <a href="index.html" class="back"><< Back</a>
+    <div class="form_container">
+        <form class="contact_form">
 
 
-    <script src="js/index.js"></script>
+            <div class="name_container">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name">
+                <div class="name_error">Minimum 10 characters equrired</div>
+            </div>
+            
+            <div class="email_container">
+                <label for="email">Email </label>
+                <input type="email" name="email" id="email">
+                <div class="email_error">Must be an email address</div>
+            </div>
+
+            <div class="address_container">
+                <label for="address">Your Address </label>
+                <input type="text" name="address" id="address">
+                <div class="address_error">Minimum length of 25 characters</div>
+            </div>
+
+            <button class="contact_sumbit" type="submit">Sumbit</button>
+        </form>
+    </div>
+
+    <script src="js/contact.js"></script>
 </body>
 </html>

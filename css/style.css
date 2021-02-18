@@ -45,6 +45,7 @@ h2 {
 
 a{
     color: black;
+    margin: 1rem;
 }
 
 /*         Index             */
@@ -54,6 +55,7 @@ a{
     text-align: center;
     margin-bottom: 150px;
 }
+
 
 
 
@@ -91,4 +93,57 @@ a{
 .item_container{
     display: block;
     text-align: center;
+}
+
+
+
+
+
+
+/*      contact form          */
+
+
+.contact_form{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1px black soild;
+    margin-top: 30px;
+}
+
+#name, #email, #address{
+    margin: 0rem;
+}
+
+.name_container, .email_container, .address_container {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.contact_sumbit{
+    align-self: center;
+    width: 100px;
+    height: 28px;
+    color: black;
+    font-weight: 600;
+
+}
+
+input {
+    width: 300px;
+    padding: 4px 0;
+}
+
+
+.name_error{
+    display: none;
+    color: red;
+}
+.email_error{
+    display: none;
+    color: red;
+}
+.address_error{
+    display: none;
+    color: red;
 }
