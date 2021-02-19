@@ -69,9 +69,10 @@ async function jokeAPI(){
         jokecontainer.innerHTML = `<h4 class="error">Error! Something went wrong! Error has occurred.  </h4>`
     }
 }
+
 jokeAPI();
 
-
+//           button need help.       i wanna revel the 'punchline' by click on the button aswell remove the button
 btn.addEventListener("click", showAnswer);
 
 function showAnswer(){
