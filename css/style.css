@@ -28,7 +28,7 @@
 }
 
 body{
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(235, 235, 235);
 }
 
 h1 {
@@ -51,9 +51,12 @@ a{
 /*         Index             */
 
 .cards_container{
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
-    margin-bottom: 150px;
+    margin: 2rem 2rem;
+    padding: 1.5rem 1rem 2rem 1.5rem;
+    
 }
 
 
@@ -71,30 +74,24 @@ a{
     margin: 3rem;
 }
 .setup{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 .punch_line{
     display: block;
 }
 
-
-
-
-
-
-
-
+.answer{
+    display: none;
+}
 
 /* Details  */
-
-
 
 .item_container{
     display: block;
     text-align: center;
 }
-
 
 
 
@@ -108,16 +105,23 @@ a{
     display: flex;
     flex-direction: column;
     border-radius: 1px black soild;
-    margin-top: 30px;
+    margin: auto;
+    width: 700px;
+    padding: 2rem;
+    background-color: white;
+}
+label {
+    font-weight: 550;
 }
 
 #name, #email, #address{
-    margin: 0rem;
+    margin: 5px;
+    padding: 5px;
 }
 
 .name_container, .email_container, .address_container {
     text-align: center;
-    margin: 1rem 0;
+    margin: 8px 0;
 }
 
 .contact_sumbit{
@@ -126,7 +130,8 @@ a{
     height: 28px;
     color: black;
     font-weight: 600;
-
+    margin-top: 10px;
+    cursor: pointer;
 }
 
 input {

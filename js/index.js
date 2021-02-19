@@ -9,17 +9,19 @@ async function api(){
         const json = await response.json(response);
         const pokemon = json.data;
 
-        //console.log(pokemon);
+        console.log(pokemon);
         cardContainer.innerHTML = "";
         for(let i = 0; i < pokemon.length; i++){
-            if(i === 10){
+            if(i === 12){
                 break;
             }
             //console.log(pokemon[i]);
 
-            cardContainer.innerHTML += `
-                                        <a href="details.html?name=${pokemon[i].name}">
-                                        <img src="${pokemon[i].images.small}"></img></a>`;
+            cardContainer.innerHTML += `<div class="card_holder">
+                                            <h3>${pokemon[i].name} - HP ${pokemon[i].hp}  </h3>
+                                            <a href="details.html?name=${pokemon[i].name}">
+                                            <img src="${pokemon[i].images.small}"></img></a>
+                                        </div>`;
         }                               
     } catch (error) {
         console.log(error);
@@ -34,6 +36,9 @@ api();
 // Jokes
 
 const jokecontainer = document.querySelector(".joke_container");
+const btn = document.querySelector(".btn");
+const answer = document.querySelector (".answer");
+
 
 const jokesUrl = "https://official-joke-api.appspot.com/jokes/ten";
 
@@ -55,7 +60,7 @@ async function jokeAPI(){
 
         jokecontainer.innerHTML += `<div class="jokes">
                                         <div class="setup"> ${joke[i].setup} </div>
-                                        <div> Answer: ${joke[i].punchline} </div>
+                                        <button class="btn">Click for answer<div class="answer"> Answer: ${joke[i].punchline}</div></button> 
                                     </div>`;
         
         }
@@ -65,6 +70,20 @@ async function jokeAPI(){
     }
 }
 jokeAPI();
+
+
+btn.addEventListener("click", showAnswer);
+
+function showAnswer(){
+    console.log("hello");
+
+
+    answer.innerHTML.style.display = "block"
+    btn.innerHTML.style.display = "none"
+}
+
+
+
 
 
 
