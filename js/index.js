@@ -59,10 +59,9 @@ async function jokeAPI(){
             };
 
         jokecontainer.innerHTML += `<div class="jokes">
-                                        <div class="setup"> ${joke[i].setup} </div>
-                                        <button class="btn">Click for answer<div class="answer"> Answer: ${joke[i].punchline}</div></button> 
+                                        <div class="setup"> ${joke[i].setup}</div>
+                                        <div> ${joke[i].punchline}</div>
                                     </div>`;
-        
         }
     } catch (error){
         console.log(error);
@@ -73,14 +72,12 @@ async function jokeAPI(){
 jokeAPI();
 
 //           button need help.       i wanna revel the 'punchline' by click on the button aswell remove the button
-btn.addEventListener("click", showAnswer);
-
-function showAnswer(){
-    console.log("hello");
-
-
-    answer.innerHTML.style.display = "block"
-    btn.innerHTML.style.display = "none"
+function button() {
+    if (answer.style.display === "none") {
+    answer.style.display = "block";
+    } else {
+    answer.style.display = "none";
+    }
 }
 
 

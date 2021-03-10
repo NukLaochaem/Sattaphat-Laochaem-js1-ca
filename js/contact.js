@@ -28,8 +28,10 @@ function validateForm(){
     } else {
         addressError.style.display = "block"
     }
-    console.log("hello");
 }
+
+
+
 
 form.addEventListener("submit", validateForm)
 
