@@ -1,11 +1,11 @@
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-const name = params.get("name");
-console.log(name);
+const pokeName = params.get("name");
+console.log();
 
 
 const pokeUrl = "https://api.pokemontcg.io/v2/cards?";
-const singlePokemon = pokeUrl +`q=name:${name}`;
+const singlePokemon = pokeUrl +`q=name:${pokeName}`;
 
 
 const cardsContainer = document.querySelector(".item_container")

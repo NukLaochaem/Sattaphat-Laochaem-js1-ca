@@ -114,12 +114,12 @@ label {
     font-weight: 550;
 }
 
-#name, #email, #address{
+#name, #email, #address #subject{
     margin: 5px;
     padding: 5px;
 }
 
-.name_container, .email_container, .address_container {
+.name_container, .email_container, .address_container , .subject_container {
     text-align: center;
     margin: 8px 0;
 }
@@ -140,15 +140,8 @@ input {
 }
 
 
-.name_error{
+.name_error, .subject_error, .email_error, .address_error{
     display: none;
     color: red;
 }
-.email_error{
-    display: none;
-    color: red;
-}
-.address_error{
-    display: none;
-    color: red;
-}
+
