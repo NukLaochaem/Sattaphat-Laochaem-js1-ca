@@ -18,23 +18,17 @@ async function callApi(){
         const response = await fetch(singlePokemon);
         const json = await response.json(response);
         const cards = json.data;
-        
-        console.log(cards);
 
         cardsContainer.innerHTML = "";
 
         for(let i = 0; i < cards.length; i++){
-            
             if(i === 5){
                 break;
             }
-
             let cardFlavorText = "Unknown"
             if(cards[i].flavorText){
                 cardFlavorText = cards[i].flavorText;
             }
-
-            console.log(cards[i]);
 
             cardsContainer.innerHTML = `<h1>${cards[i].name}<h1>
                                         <h3>Pokemon Type: ${cards[i].types}</h3>
